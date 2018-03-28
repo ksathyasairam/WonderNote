@@ -6,6 +6,7 @@ import {Card, CardHeader,CardTitle, CardText} from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 import IconButton from 'material-ui/IconButton';
+import AppBar from 'material-ui/AppBar';
 
 import ShowList from './ShowList';
 import CreateList from './CreateList';
@@ -58,14 +59,24 @@ class Todo extends React.Component{
 
 	render(){
 		
+			const divstyle = {
+				width:'50%',
+				margin: '0 auto'
+
+			}
 
 		return (
-			<div>
+			<div >
 				<MuiThemeProvider>
- 				
-						<CreateList onClick= { this.handleClick.bind(this)} />
+ 						<AppBar title="Todo"/>
+ 						<div style= {style}>
+
+ 							<CreateList onClick= { this.handleClick.bind(this)} />
+ 							<br/>
 						<ShowList value = {this.state.data} onClick={this.handleClickDelete.bind(this)}/>
     				
+ 						</div>
+						
   				</MuiThemeProvider>
 			</div>
 		);

@@ -50,22 +50,34 @@ class CreateList extends React.Component{
 	render(){
 
 		const style = {
-  			margin: 50,
-  			width : 500,
+  			position: 'relavtive',
+  			width : '50%',
+  			margin: '0 auto',
+  			padding: '10px'
+
   			
 		};
 
+
+
+  const buttonstyle = {
+        float : 'right',
+        
+  }
 		return(
 			<div>
 				<MuiThemeProvider>
-					<Card style={style}>
+					<Card style = {style}>
+					<div style = {{display:'flex', overflow:'auto'}}>
+					<div style = {{width:'85%'}}>
+	   				 <TextField fullWidth= {true} underlineShow = {false} hintText = {"Enter a note"} multiLine={true} value={this.state.editText} onChange = {this.handleChange.bind(this)}/>
+	   				</div>
 
-
-	   				 <TextField value={this.state.editText} onChange = {this.handleChange.bind(this)}/>
+	     		     <div style= {buttonstyle} >
 	     		     <FlatButton label = "Add Note" onClick = {this.handleClick.bind(this)}/> 
+	     		     </div>
 
-
-
+	     		     </div>
 	     		     </Card>
 	     		</MuiThemeProvider>
 	   		 </div>

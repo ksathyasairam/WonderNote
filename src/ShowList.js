@@ -11,21 +11,40 @@ import IconButton from 'material-ui/IconButton';
 
 
 function ItemRow (props){
-	var style = {
-		 margin: 30,
-	};
+	const style = {
+  			position:'relative',
+  			width : '50%',
+  			margin: '0 auto',
+  			padding: '10px'
+  			
+  			};
+
+  	const divstyle = {
+
+
+  		display: 'flex',
+  		flexDirection: 'row',
+  		overflow : 'auto'
+  	}
+
+  	const buttonstyle = {
+  		float:'right',
+  		color:'red',
+  	}
 	return(
 		<div>
 		
 			<MuiThemeProvider>
 				<Card style= {style}>
-					<div>
-					<CardText>{props.text}<FlatButton label = {"x"}  onClick={()=> props.onClick(props.value)} /> </CardText>
-					
+					<div style = {divstyle}>
+					<p style = {{width:'85%',overflow:'auto'}}>
+					{props.text}
+					</p>
+					<FlatButton style = {buttonstyle}label = {"DELETE"}  onClick={()=> props.onClick(props.value)} /> 
 					</div>
 					
 				</Card>
-
+				<br/>
 			</MuiThemeProvider>
 
 		</div>
